@@ -28,6 +28,7 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Here you can handle submission logic (e.g., sending data to API)
     alert('Form submitted!');
   };
 
@@ -45,9 +46,10 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
           {showDetails ? 'Hide Details' : 'Assist'}
         </button>
       </div>
-      
+
       {showDetails && (
         <form onSubmit={handleSubmit} className="mt-4 space-y-4">
+          {/* Step 1: Customer Information Collection */}
           {number === 1 && (
             <>
               <input
@@ -56,7 +58,7 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="Full Name"
-                className="w-full p-2 bg-gray-800 text-white border border-gray-600 rounded"
+                className="w-full p-3 bg-gray-800 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
               <input
@@ -65,7 +67,7 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="Email"
-                className="w-full p-2 bg-gray-800 text-white border border-gray-600 rounded"
+                className="w-full p-3 bg-gray-800 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
               <input
@@ -74,13 +76,13 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
                 value={formData.phone}
                 onChange={handleInputChange}
                 placeholder="Phone Number"
-                className="w-full p-2 bg-gray-800 text-white border border-gray-600 rounded"
+                className="w-full p-3 bg-gray-800 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </>
           )}
-          
 
+          {/* Step 2: Account Setup */}
           {number === 2 && (
             <>
               <input
@@ -89,7 +91,7 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
                 value={formData.password}
                 onChange={handleInputChange}
                 placeholder="Password"
-                className="w-full p-2 bg-gray-800 text-white border border-gray-600 rounded"
+                className="w-full p-3 bg-gray-800 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
               <input
@@ -98,13 +100,13 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
                 value={formData.confirmPassword}
                 onChange={handleInputChange}
                 placeholder="Confirm Password"
-                className="w-full p-2 bg-gray-800 text-white border border-gray-600 rounded"
+                className="w-full p-3 bg-gray-800 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </>
           )}
-          
-          
+
+          {/* Step 3: Email Verification */}
           {number === 3 && (
             <>
               <input
@@ -113,25 +115,25 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
                 value={formData.verificationCode}
                 onChange={handleInputChange}
                 placeholder="Verification Code"
-                className="w-full p-2 bg-gray-800 text-white border border-gray-600 rounded"
+                className="w-full p-3 bg-gray-800 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </>
           )}
 
-         
+          {/* Step 4: Document Upload and Verification */}
           {number === 4 && (
             <>
               <input
                 type="file"
                 onChange={handleFileChange}
-                className="w-full p-2 bg-gray-800 text-white border border-gray-600 rounded"
+                className="w-full p-3 bg-gray-800 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </>
           )}
 
-         
+          {/* Step 5: Account Creation */}
           {number === 5 && (
             <div className="text-center">
               <p className="text-green-500">Account created successfully!</p>
@@ -141,7 +143,7 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
           {number !== 5 && (
             <button
               type="submit"
-              className="w-full py-2 bg-blue-600 text-white rounded"
+              className="w-full py-2 bg-blue-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               Submit
             </button>
