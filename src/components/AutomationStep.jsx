@@ -28,7 +28,6 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can handle submission logic (e.g., sending data to API)
     alert('Form submitted!');
   };
 
@@ -49,7 +48,6 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
 
       {showDetails && (
         <form onSubmit={handleSubmit} className="mt-4 space-y-4">
-          {/* Step 1: Customer Information Collection */}
           {number === 1 && (
             <>
               <input
@@ -82,7 +80,6 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
             </>
           )}
 
-          {/* Step 2: Account Setup */}
           {number === 2 && (
             <>
               <input
@@ -106,7 +103,6 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
             </>
           )}
 
-          {/* Step 3: Email Verification */}
           {number === 3 && (
             <>
               <input
@@ -121,7 +117,6 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
             </>
           )}
 
-          {/* Step 4: Document Upload and Verification */}
           {number === 4 && (
             <>
               <input
@@ -133,7 +128,6 @@ const AutomationStep = ({ number, title, description, showDetails, onAssistClick
             </>
           )}
 
-          {/* Step 5: Account Creation */}
           {number === 5 && (
             <div className="text-center">
               <p className="text-green-500">Account created successfully!</p>
